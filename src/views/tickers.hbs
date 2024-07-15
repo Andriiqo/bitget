@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Список тикеров</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>Список тикеров</h1>
+<table>
+    <tr><th>Символ</th><th>Последняя цена</th></tr>
+    {{#each tickers}}
+        <tr><td>{{this.symbol}}</td><td>{{this.lastPr}}</td></tr>
+    {{/each}}
+</table>
+</body>
+<script>
+</script>
+</html>
