@@ -6,6 +6,7 @@ const getTickers = async (request: Request, response: Response) => {
     Ticker.startLongPolling()
 
     response.render("tickers", {
+        title: 'Tickers',
         tickers: await Ticker.getAllTickers(),
     })
 }

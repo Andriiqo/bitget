@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Список тикеров</title>
-    <meta charset="utf-8" />
-</head>
-<body>
-<h1>Список тикеров</h1>
-<table>
-    <tr>
-        <th>ID в БД</th>
-        <th>Символ</th>
-        <th>Последняя цена</th>
-        <th>timestamp</th>
-    </tr>
-    {{#each tickers}}
+<h1 class="my-4">Список тикеров</h1>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
         <tr>
-            <td>{{this.id}}</td>
-            <td>{{this.symbol}}</td>
-            <td>{{this.price}}</td>
-            <td>{{this.timestamp}}</td>
+            <th>ID в БД</th>
+            <th>Символ</th>
+            <th>Последняя цена</th>
+            <th>timestamp</th>
         </tr>
-    {{/each}}
+    </thead>
+    <tbody>
+        {{#each tickers}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.symbol}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.timestamp}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
 </table>
-</body>
-<script>
-</script>
-</html>
