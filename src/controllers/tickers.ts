@@ -1,12 +1,12 @@
 import { Request, Response } from "express"
 
-import {Ticker} from "../models/tickers"
+import { Ticker } from "../models/tickers"
 
-const getTickers = (request: Request, response: Response) => {
+const getTickers = async (request: Request, response: Response) => {
     Ticker.startLongPolling()
 
     response.render("tickers", {
-        tickers: Ticker.getAllTickers.data,
+        tickers: await Ticker.getAllTickers(),
     })
 }
 

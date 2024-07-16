@@ -7,9 +7,19 @@
 <body>
 <h1>Список тикеров</h1>
 <table>
-    <tr><th>Символ</th><th>Последняя цена</th></tr>
+    <tr>
+        <th>ID в БД</th>
+        <th>Символ</th>
+        <th>Последняя цена</th>
+        <th>timestamp</th>
+    </tr>
     {{#each tickers}}
-        <tr><td>{{this.symbol}}</td><td>{{this.lastPr}}</td></tr>
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.symbol}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.timestamp}}</td>
+        </tr>
     {{/each}}
 </table>
 </body>

@@ -4,13 +4,13 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
+  url      = "file:./dev.db?connection_limit=1&socket_timeout=60000"
 }
 
 model Ticker {
   id        Int    @id @default(autoincrement()) // Идентификатор пользователя, автоинкремент
-  symbol    String
-  Exchange  String
+  symbol    String @unique
+  exchange  String
   price     String
   timestamp String
 }
