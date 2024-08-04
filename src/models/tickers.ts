@@ -26,6 +26,11 @@ export class Ticker {
                 throw new Error(`HTTP error! status: ${tickersResponse.status}`);
             }
 
+            const contentType = tickersResponse.headers.get("content-type");
+            if (!contentType || !contentType.includes("application/json")) {
+                throw new TypeError("Expected JSON but got " + contentType);
+            }
+
             const response = await tickersResponse.json() as ResponseTickers;
 
             for (const ticker of response.data) {
